@@ -1,0 +1,7 @@
+@use "sass:math"; $base: 40; @function rem( $px ){@return math.div($px, 60)*1rem;}
+%sprite {
+  background-image: url(~@/images/sprite.png});
+  background-repeat: no-repeat;
+  background-size: rem(16) rem(16);
+}
+@mixin icon-loading { width: rem(16); height: rem(16); background-position: 0 0; }

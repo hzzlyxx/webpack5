@@ -1,0 +1,46 @@
+@use 'sass:math';
+
+%clearfix {
+  &:after {
+    content: '';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+  }
+
+  zoom: 1;
+}
+
+%textpoint {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@function rem($size) {
+  @return math.div($size, 20) + rem;
+}
+
+@mixin m_opacity($x) {
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + $x * 100+')';
+  filter: alpha(opacity=$x * 100);
+  opacity: $x;
+}
+
+/* 最多line行 ie截断*/
+@mixin max_line($line) {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 兼容ie */
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+%grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

@@ -1,0 +1,6 @@
+**/*.md
+**/*.html
+**/*.svg
+package.json
+release
+public
